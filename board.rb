@@ -12,12 +12,12 @@ class Board
 
   def move_piece(start_pos,end_pos)
     raise "no piece here!" if self[start_pos].nil?
-    raise "piece cannot move to end pos!" unless valid_position?(end_pos)
+    raise "piece cannot move to end pos!" unless in_bounds(end_pos)
     self[end_pos] = self[start_pos]
     self[start_pos] = nil
   end
 
-  def valid_position?(pos)
+  def in_bounds(pos)
     pos.all? {|x| x < 8 && x > 0}
   end
 
