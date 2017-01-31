@@ -17,8 +17,8 @@ class Board
     self[start_pos] = nil
   end
 
-  def in_bounds(pos)
-    pos.all? {|x| x < 8 && x > 0}
+  def in_bounds(pos) #[1,2,3]
+    pos.all? {|x| (x < 8) && (x >= 0)}
   end
 
   def [](pos)
